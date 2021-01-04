@@ -45,7 +45,7 @@ app.get("/apps", (req, res) => {
   if (sort !== undefined && sort.toLowerCase() !== "rating" && sort.toLowerCase() !== "app") {
     return res
     .status(400)
-    .send('Sort must be either "Rating" or "Rpp"');
+    .send('Sort must be either "Rating" or "App"');
   }
 
   if (sort) {
@@ -72,6 +72,4 @@ app.get("/apps", (req, res) => {
   res.json(genresFilter);
 });
 
-app.listen(8000, () => {
-  console.log("Express server is listening on port 8000!");
-});
+module.exports = app;
